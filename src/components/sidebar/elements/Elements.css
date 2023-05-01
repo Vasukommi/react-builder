@@ -1,0 +1,10 @@
+.html-elemets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 40px;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

@@ -1,22 +1,13 @@
+import React from 'react';
+import { useSelector } from 'react-redux'
 import Elements from "./elements/Elements";
 import "./Sidebar.css";
 
-const elementsArray = [
-    {
-        id: 1,
-        type: 'html',
-        label: "div"
-    },
-    {
-        id: 2,
-        type: 'html',
-        label: "h1"
-    }
-]
 
 const Sidebar = () => {
+    const elementsArray = useSelector(state => state.sidebarSlice.sidebarElements)
     return (
-        <div>
+        <div className="sidebar-section">
             {elementsArray.map((eachElement) => (
                 <Elements key={eachElement.id} eachElement={eachElement} />
             ))}
@@ -24,4 +15,4 @@ const Sidebar = () => {
     )
 }
 
-export default Sidebar
+export default Sidebar;
