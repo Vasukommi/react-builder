@@ -18,6 +18,6 @@ export const canvasSlice = createSlice({
     }
 })
 
-export const { addElement } = canvasSlice.actions
+export const { addElement, setActiveElementId } = canvasSlice.actions
 
 export default canvasSlice.reducer

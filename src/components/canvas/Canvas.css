@@ -3,3 +3,11 @@
     height: 92vh;
     overflow: scroll;
 }
+
+.active-canvas {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}

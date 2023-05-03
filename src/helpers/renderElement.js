@@ -1,4 +1,7 @@
-function renderElement(element, onFocusElement) {
+import "../components/canvas/Canvas.css";
+
+function renderElement({ element }, onFocusElement, isActive) {
+    debugger
     let html = '';
     // style="${getStyleString(element.styles)}
     const style = {
@@ -11,15 +14,13 @@ function renderElement(element, onFocusElement) {
     }
 
     const focusedElement = (event) => {
-        debugger
-        console.log(element)
-        onFocusElement()
+        onFocusElement(element)
     }
 
     try {
         switch (element.component.type) {
             case 'div':
-                html = <div onClick={focusedElement} style={style}>{element.component.content}</div>;
+                html = <div className={`active-canvas ${isActive ? " active-canvas-element" : ""}`} onClick={focusedElement}>{element.component.content}</div>;
                 break;
             case 'h1':
                 html = <h1>{element.component.content}</h1>;

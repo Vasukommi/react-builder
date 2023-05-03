@@ -6,6 +6,7 @@ export const sidebarSlice = createSlice({
     initialState: {
         sidebarElements: [
             {
+                elementId: 1,
                 type: 'html',
                 component: {
                     type: 'div',
@@ -13,6 +14,7 @@ export const sidebarSlice = createSlice({
                 }
             },
             {
+                elementId: 2,
                 type: 'html',
                 component: {
                     type: 'h1',
@@ -20,7 +22,7 @@ export const sidebarSlice = createSlice({
                 }
             },
             {
-               
+                elementId: 3,
                 type: 'html',
                 component: {
                     type: 'p',
@@ -28,7 +30,7 @@ export const sidebarSlice = createSlice({
                 }
             },
             {
-               
+                elementId: 4,
                 type: 'html',
                 component: {
                     type: 'span',
@@ -36,7 +38,7 @@ export const sidebarSlice = createSlice({
                 }
             },
             {
-               
+                elementId: 5,
                 type: 'html',
                 component: {
                     type: 'image',

@@ -1,8 +1,9 @@
 import { useDrop } from "react-dnd";
 import { v4 as uuid } from 'uuid'
 import { useDispatch, useSelector } from 'react-redux'
-import { addElement } from "../../app/slices/canvasSlice.js";
+import { addElement, setActiveElementId } from "../../app/slices/canvasSlice.js";
 import renderElement from "../../helpers/renderElement.js";
+import SectionEditors from "../editors/section-editor/sectionEditor.jsx";
 import "./Canvas.css";
 
 const Canvas = () => {
@@ -12,27 +13,18 @@ const Canvas = () => {
         accept: 'html',
         drop: ((item) => {
             const updatedItem = { id: uuid(), ...item }
-            debugger
             dispatch(addElement(updatedItem))
         }),
         collect: (monitor) => ({
             isOver: monitor.isOver()
         })
     }))
-
-    const onFocusElement = () => {
-        debugger
-    }
-
-    const renderHtml = (element) => {
-        const html = renderElement(element, (id) => onFocusElement(element.id))
-        return html
-    }
+    
     return (
         <div className="canvas-section" ref={drop}>
             {canvasElements.map((eachElement) => (
-                <div>
-                    {renderHtml(eachElement)}
+                <div key={eachElement.id}>
+                    <SectionEditors element={eachElement} />
                 </div>
             ))}
         </div>

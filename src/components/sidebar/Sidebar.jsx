@@ -9,7 +9,7 @@ const Sidebar = () => {
     return (
         <div className="sidebar-section">
             {elementsArray.map((eachElement) => (
-                <Elements key={eachElement.id} eachElement={eachElement} />
+                <Elements key={eachElement.elementId} eachElement={eachElement} />
             ))}
         </div>
     )
